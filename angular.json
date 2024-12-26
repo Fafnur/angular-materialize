@@ -33,6 +33,9 @@
             "polyfills": ["zone.js", "@angular/localize/init"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "stylePreprocessorOptions": {
+              "includePaths": ["node_modules", "./"]
+            },
             "assets": [
               {
                 "glob": "**/*",
