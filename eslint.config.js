@@ -1,7 +1,7 @@
 // @ts-check
-const eslint = require("@eslint/js");
-const tseslint = require("typescript-eslint");
-const angular = require("angular-eslint");
+const eslint = require('@eslint/js');
+const tseslint = require('typescript-eslint');
+const angular = require('angular-eslint');
 const eslintPluginSimpleImportSort = require('eslint-plugin-simple-import-sort');
 const eslintPluginImport = require('eslint-plugin-import');
 const eslintConfigPrettier = require('eslint-config-prettier');
@@ -11,13 +11,8 @@ module.exports = tseslint.config(
     ignores: ['**/dist', '**/public'],
   },
   {
-    files: ["**/*.ts"],
-    extends: [
-      eslint.configs.recommended,
-      ...tseslint.configs.recommended,
-      ...tseslint.configs.stylistic,
-      ...angular.configs.tsRecommended,
-    ],
+    files: ['**/*.ts'],
+    extends: [eslint.configs.recommended, ...tseslint.configs.recommended, ...tseslint.configs.stylistic, ...angular.configs.tsRecommended],
     processor: angular.processInlineTemplates,
     plugins: {
       'simple-import-sort': eslintPluginSimpleImportSort,
@@ -79,32 +74,29 @@ module.exports = tseslint.config(
       '@typescript-eslint/no-invalid-this': ['warn'],
       '@angular-eslint/no-host-metadata-property': 'off',
       'no-extra-semi': 'off',
-      "@angular-eslint/directive-selector": [
-        "error",
+      '@angular-eslint/directive-selector': [
+        'error',
         {
-          type: "attribute",
-          prefix: "app",
-          style: "camelCase",
+          type: 'attribute',
+          prefix: 'app',
+          style: 'camelCase',
         },
       ],
-      "@angular-eslint/component-selector": [
-        "error",
+      '@angular-eslint/component-selector': [
+        'error',
         {
-          type: "element",
-          prefix: "app",
-          style: "kebab-case",
+          type: 'element',
+          prefix: 'app',
+          style: 'kebab-case',
         },
       ],
       '@typescript-eslint/consistent-type-imports': 'error',
     },
   },
   {
-    files: ["**/*.html"],
-    extends: [
-      ...angular.configs.templateRecommended,
-      ...angular.configs.templateAccessibility,
-    ],
+    files: ['**/*.html'],
+    extends: [...angular.configs.templateRecommended, ...angular.configs.templateAccessibility],
     rules: {},
   },
-  eslintConfigPrettier
+  eslintConfigPrettier,
 );
