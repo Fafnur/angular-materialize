@@ -1,0 +1,17 @@
+<div class="input-field" [class.error]="control().touched && control().errors" [class.outlined]="mode() === 'outlined'">
+  <input id="first_name" type="text" placeholder=" " maxlength="20" [formControl]="control()" />
+  <label for="first_name">First Name</label>
+  @if (control().touched && control().errors) {
+    <span class="supporting-text">
+      @if (control().hasError('required')) {
+        Обязательное поле
+      } @else if (control().hasError('email')) {
+        Некорректный email
+      } @else {
+        Неизвестная ошибка
+      }
+    </span>
+  } @else if (control().invalid) {
+    <span class="supporting-text">Введите свой email</span>
+  }
+</div>
