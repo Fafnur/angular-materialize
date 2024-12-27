@@ -1,5 +1,14 @@
 // Note: uncomment for check direct integration and comment normalize
 // @import '@materializecss/materialize/dist/css/materialize.min';
-
 @use './stylesheets/normalize' as normalize;
+@use './stylesheets/colors.module' as colors;
+@use './stylesheets/tokens.module' as tokens;
+@use './stylesheets/theme.module' as theme;
+@use './stylesheets/typography.module' as typography;
+
 @include normalize.init();
+
+@include tokens.init();
+@include theme.init();
+@include typography.init();
+@include colors.init();
