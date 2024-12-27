@@ -1,0 +1,117 @@
+:host {
+  &:not([type]):not(.browser-default),
+  &[type='text']:not(.browser-default),
+  &[type='password']:not(.browser-default),
+  &[type='email']:not(.browser-default),
+  &[type='url']:not(.browser-default),
+  &[type='time']:not(.browser-default),
+  &[type='date']:not(.browser-default),
+  &[type='datetime']:not(.browser-default),
+  &[type='datetime-local']:not(.browser-default),
+  &[type='month']:not(.browser-default),
+  &[type='tel']:not(.browser-default),
+  &[type='number']:not(.browser-default),
+  &[type='search']:not(.browser-default),
+  &.materialize-textarea {
+    outline: none;
+    color: var(--md-sys-color-on-background);
+    width: 100%;
+    font-size: 16px; // => 16 dp
+    height: 56px; // 56dp
+  }
+
+  box-sizing: border-box; /* https://stackoverflow.com/questions/1377719/padding-within-inputs-breaks-width-100*/
+  padding: 20px 16px 0 16px;
+  background-color: var(--md-sys-color-surface);
+  border: none; // reset
+  border-radius: 4px 4px 0 0; // md.sys.shape.corner.extra-small.top
+  border-bottom: 1px solid var(--md-sys-color-on-surface-variant);
+
+  &:focus:not([readonly]) {
+    border-bottom: 2px solid var(--md-sys-color-primary);
+    padding-top: 20px + 1px; // add border-width
+  }
+
+  &:disabled,
+  &[readonly='readonly'] {
+    color: rgba(var(--md_sys_color_on-surface), 0.38);
+    border-color: rgba(var(--md_sys_color_on-surface), 0.12);
+    background-color: rgba(var(--md_sys_color_on-surface), 0.04);
+  }
+
+  &:not(.app-textarea)::placeholder {
+    user-select: none;
+  }
+
+  :host-context(.is-outlined) {
+    padding-top: 0;
+    background-color: var(--md-sys-color-background);
+    border: 1px solid var(--md-sys-color-on-surface-variant);
+    border-radius: 4px; // md.sys.shape.corner.extra-small
+
+    &:focus:not([readonly]) {
+      border: 2px solid var(--md-sys-color-primary);
+      padding-top: 0;
+      margin-left: -1px; // subtract border-width
+    }
+
+    &:disabled,
+    &[readonly='readonly'] {
+      color: rgba(var(--md_sys_color_on-surface), 0.38);
+      border-color: rgba(var(--md_sys_color_on-surface), 0.12);
+    }
+  }
+
+  // Invalid Input Style
+  &.is-invalid {
+    border-bottom: 2px solid var(--md-sys-color-error);
+    box-shadow: 0 1px 0 0 var(--md-sys-color-error);
+  }
+
+  :host-context(.is-error) {
+    border-color: var(--md-sys-color-error);
+
+    &:focus:not([readonly]) {
+      border-color: var(--md-sys-color-error);
+    }
+  }
+}
+
+.app-input-prefix ~ :host {
+  padding-left: calc(12px + 24px + 16px);
+}
+
+.app-input-suffix ~ :host {
+  padding-right: calc(12px + 24px + 16px);
+}
+
+.app-textarea {
+  width: 100%;
+  height: 3rem;
+  background-color: transparent;
+
+  &.materialize-textarea {
+    padding-top: 26px !important;
+    padding-bottom: 4px !important;
+    line-height: normal;
+    overflow-y: hidden; /* prevents scroll bar flash */
+    resize: none;
+    min-height: 3rem;
+    box-sizing: border-box;
+  }
+}
+
+// TODO: ????
+//// For textarea autoresize
+//.hiddendiv {
+//  visibility: hidden;
+//  white-space: pre-wrap;
+//  word-wrap: break-word;
+//  overflow-wrap: break-word; /* future version of deprecated 'word-wrap' */
+//  padding-top: 1.2rem; /* prevents text jump on Enter keypress */
+//
+//  // Reduces repaints
+//  position: absolute;
+//  top: 0;
+//  z-index: -1;
+//}

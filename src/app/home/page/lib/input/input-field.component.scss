@@ -1,0 +1,9 @@
+:host {
+  display: block;
+  position: relative;
+  clear: both;
+
+  &.is-inline {
+    display: inline-block;
+  }
+}

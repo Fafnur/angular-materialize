@@ -1,0 +1,10 @@
+:host {
+  position: absolute;
+  right: 12px;
+  top: 16px;
+  user-select: none;
+}
+
+:host-context(.is-error) {
+  color: var(--md-sys-color-error);
+}

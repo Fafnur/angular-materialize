@@ -1,12 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-input-label',
-  imports: [],
-  templateUrl: './input-label.component.html',
+  // eslint-disable-next-line @angular-eslint/component-selector
+  selector: 'label[appInputLabel]',
+  template: '<ng-content/>',
   styleUrl: './input-label.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    class: 'app-input-label',
+  },
 })
-export class InputLabelComponent {
-
-}
+export class InputLabelComponent {}

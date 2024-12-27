@@ -2,13 +2,13 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import type { FormControl } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { InputComponent } from '../input-field/input/input.component';
-import { InputCharacterCounterComponent } from '../input-field/input-character-counter/input-character-counter.component';
-import { InputFieldComponent } from '../input-field/input-field.component';
-import { InputHintComponent } from '../input-field/input-hint/input-hint.component';
-import { InputLabelComponent } from '../input-field/input-label/input-label.component';
-import { InputPrefixComponent } from '../input-field/input-prefix/input-prefix.component';
-import { InputSuffixComponent } from '../input-field/input-suffix/input-suffix.component';
+import { InputComponent } from '../input/input/input.component';
+import { InputCharacterCounterComponent } from '../input/input-character-counter/input-character-counter.component';
+import { InputFieldComponent } from '../input/input-field.component';
+import { InputHintComponent } from '../input/input-hint/input-hint.component';
+import { InputLabelComponent } from '../input/input-label/input-label.component';
+import { InputPrefixComponent } from '../input/input-prefix/input-prefix.component';
+import { InputSuffixComponent } from '../input/input-suffix/input-suffix.component';
 
 @Component({
   selector: 'app-home-code',

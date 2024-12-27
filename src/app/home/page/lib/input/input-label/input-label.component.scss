@@ -1,0 +1,64 @@
+:host {
+  color: var(--md-sys-color-on-surface-variant);
+  user-select: none;
+  font-size: 16px;
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  cursor: text;
+  transform-origin: top left;
+  transition:
+    left 0.2s ease-out,
+    top 0.2s ease-out,
+    transform 0.2s ease-out;
+}
+
+// Label
+.app-input:focus:not([readonly]) + :host {
+  color: var(--md-sys-color-primary);
+}
+.app-input:focus:not([readonly]) + :host,
+.app-input:not([placeholder=' ']) + :host,
+.app-input:not(:placeholder-shown) + :host {
+  //font-size: 12px; // md.sys.typescale.body-small.size
+  // https://stackoverflow.com/questions/34717492/css-transition-font-size-avoid-jittering-wiggling
+  transform: scale(calc(12 / 16));
+  top: 8px;
+}
+
+.app-input:disabled + :host,
+.app-input[readonly='readonly'] + :host {
+  color: rgba(var(--md_sys_color_on-surface), 0.38);
+}
+
+.app-input-prefix ~ :host {
+  left: calc(12px + 24px + 16px);
+}
+
+// is-outlined
+.app-input.is-outlined:focus:not([readonly]) + :host {
+  color: var(--md-sys-color-primary);
+}
+
+:host-context(.is-outlined) .app-input:focus:not([readonly]) + :host,
+:host-context(.is-outlined) .app-input:not([placeholder=' ']) + :host,
+:host-context(.is-outlined) .app-input:not(:placeholder-shown) + :host {
+  top: -8px;
+  left: 16px;
+  margin-left: -4px;
+  padding: 0 4px;
+  background-color: var(--md-sys-color-background);
+}
+
+.app-input.is-invalid ~ :host,
+.app-input:focus.is-invalid ~ :host {
+  color: var(--md-sys-color-error);
+}
+
+:host-context(.is-error) {
+  color: var(--md-sys-color-error);
+}
+
+:host-context(.is-error input:focus:not([readonly])) + :host {
+  color: var(--md-sys-color-error);
+}
