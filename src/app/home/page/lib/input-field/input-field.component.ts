@@ -10,7 +10,6 @@ type CoerceBoolean = boolean | string | undefined | null;
 @Component({
   selector: 'app-input-field',
   template: '<ng-content/>',
-  styleUrls: ['./input-field.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'input-field',

@@ -1,8 +1,0 @@
-<app-input-field mode="outlined">
-  <app-input-prefix><i class="material-icons">a</i></app-input-prefix>
-  <app-input-suffix><i class="material-icons">b</i></app-input-suffix>
-  <input id="sample" [formControl]="control()" type="text" placeholder=" " maxlength="4" appInput />
-  <label for="sample" appInputLabel>First Name</label>
-  <app-input-hint>Supporting Text</app-input-hint>
-  <app-input-character-counter>{{ control().value.length }}/4</app-input-character-counter>
-</app-input-field>

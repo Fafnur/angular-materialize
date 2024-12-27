@@ -3,7 +3,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 @Component({
   selector: 'app-input-prefix',
   template: '<ng-content/>',
-  styles: [':host { display: block }'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'prefix',

@@ -5,11 +5,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { tap } from 'rxjs';
 
 import { InputDirectComponent } from './input-direct/input-direct.component';
-import { HomeCodeComponent } from './home-code/home-code.component';
 
 @Component({
   selector: 'app-home-page',
-  imports: [InputDirectComponent, HomeCodeComponent],
+  imports: [InputDirectComponent],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -21,10 +20,6 @@ export class HomePageComponent implements OnInit {
     email: new FormControl<string>('', {
       nonNullable: true,
       validators: [Validators.required, Validators.email],
-    }),
-    code: new FormControl<string>('', {
-      nonNullable: true,
-      validators: [Validators.required, Validators.minLength(4)],
     }),
   });
 
