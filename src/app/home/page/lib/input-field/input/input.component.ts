@@ -1,12 +1,12 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { NgControl } from '@angular/forms';
 
 @Component({
   selector: 'app-input',
-  imports: [],
-  templateUrl: './input.component.html',
+  template: '<ng-content/>',
   styleUrl: './input.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InputComponent {
-
+  readonly ngControl = inject(NgControl);
 }

@@ -2,11 +2,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-input-prefix',
-  imports: [],
-  templateUrl: './input-prefix.component.html',
+  template: '<ng-content/>',
   styleUrl: './input-prefix.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    class: 'prefix',
+  },
 })
-export class InputPrefixComponent {
-
-}
+export class InputPrefixComponent {}

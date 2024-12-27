@@ -2,11 +2,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'app-input-label',
-  imports: [],
-  templateUrl: './input-label.component.html',
+  template: '<ng-content/>',
   styleUrl: './input-label.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class InputLabelComponent {
-
-}
+export class InputLabelComponent {}
