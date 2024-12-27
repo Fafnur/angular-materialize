@@ -1,0 +1,11 @@
+:host {
+  display: block;
+
+  &.inline {
+    display: inline-block;
+  }
+
+  &.error {
+    background-color: transparent;
+  }
+}

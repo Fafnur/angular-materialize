@@ -62,7 +62,7 @@ module.exports = tseslint.config(
       'simple-import-sort/imports': [
         'error',
         {
-          groups: [['^\\u0000'], ['^@?(?!mz)\\w'], ['^@mz?\\w'], ['^\\w'], ['^[^.]'], ['^\\.']],
+          groups: [['^\\u0000'], ['^@?(?!amz)\\w'], ['^@amz?\\w'], ['^\\w'], ['^[^.]'], ['^\\.']],
         },
       ],
       'import/newline-after-import': 'error',

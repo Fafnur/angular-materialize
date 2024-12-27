@@ -19,6 +19,7 @@
     "module": "ES2022",
     "baseUrl": ".",
     "paths": {
+      "@amz/core": ["src/app/core/index.ts"],
       "@amz/home/page": ["src/app/home/page/index.ts"]
     }
   },

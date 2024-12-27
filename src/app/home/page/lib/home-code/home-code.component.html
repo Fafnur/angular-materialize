@@ -1,0 +1,20 @@
+<app-input-field mode="outlined">
+  <app-input-prefix><i class="material-icons">place</i></app-input-prefix>
+  <app-input-suffix><i class="material-icons">gps_fixed</i></app-input-suffix>
+  <input id="code" [formControl]="control()" type="tel" placeholder=" " maxlength="4" appInput />
+  <label for="code" appInputLabel>First Name</label>
+  @if (control().touched && control().errors) {
+    <app-input-hint>
+      @if (control().hasError('required')) {
+        Обязательное поле
+      } @else if (control().hasError('minlength')) {
+        Код должен содержать 4 цифры
+      } @else {
+        Неизвестная ошибка
+      }
+    </app-input-hint>
+  } @else if (control().invalid) {
+    <app-input-hint>Введите код</app-input-hint>
+  }
+  <app-input-character-counter>{{ control().value.length }}/4</app-input-character-counter>
+</app-input-field>

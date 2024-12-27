@@ -4,11 +4,12 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { tap } from 'rxjs';
 
+import { HomeCodeComponent } from './home-code/home-code.component';
 import { InputDirectComponent } from './input-direct/input-direct.component';
 
 @Component({
   selector: 'app-home-page',
-  imports: [InputDirectComponent],
+  imports: [InputDirectComponent, HomeCodeComponent],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -20,6 +21,10 @@ export class HomePageComponent implements OnInit {
     email: new FormControl<string>('', {
       nonNullable: true,
       validators: [Validators.required, Validators.email],
+    }),
+    code: new FormControl<string>('', {
+      nonNullable: true,
+      validators: [Validators.required, Validators.minLength(4)],
     }),
   });
 
