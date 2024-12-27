@@ -1,5 +1,5 @@
 {
-  "name": "@amz/source",
+  "name": "angular-materialize",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
