@@ -6,12 +6,12 @@ import type { CoerceBoolean, InputMode } from '@amz/core';
 import { InputComponent } from './input/input.component';
 
 @Component({
-  selector: 'app-input-field',
+  selector: 'app-input',
   template: '<ng-content/>',
   styleUrl: './input-field.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    class: 'input-field',
+    class: 'input',
     '[class.inline]': `inline()`,
     '[class.outlined]': `mode() === 'outlined'`,
     '[class.error]': 'input().ngControl.touched && input().ngControl.errors',

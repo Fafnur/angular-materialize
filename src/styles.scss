@@ -1,2 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
-@import '@materializecss/materialize/dist/css/materialize.min';
+// Note: uncomment for check direct integration and comment normalize
+// @import '@materializecss/materialize/dist/css/materialize.min';
+
+@use './stylesheets/normalize' as normalize;
+@include normalize.init();
