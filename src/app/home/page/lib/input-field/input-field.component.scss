@@ -1,7 +1,11 @@
 :host {
   display: block;
 
-  &.is-inline {
+  &.inline {
     display: inline-block;
+  }
+
+  &.error {
+    background-color: transparent;
   }
 }

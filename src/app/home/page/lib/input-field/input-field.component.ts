@@ -12,9 +12,9 @@ import { InputComponent } from './input/input.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'input-field',
-    '[class.is-inline]': `inline()`,
-    '[class.is-outlined]': `mode() === 'outlined'`,
-    '[class.is-error]': 'input().ngControl.touched && input().ngControl.errors',
+    '[class.inline]': `inline()`,
+    '[class.outlined]': `mode() === 'outlined'`,
+    '[class.error]': 'input().ngControl.touched && input().ngControl.errors',
   },
 })
 export class InputFieldComponent {
